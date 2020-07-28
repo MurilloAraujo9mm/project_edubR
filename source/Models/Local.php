@@ -8,7 +8,27 @@ class Local extends Model
 {
     public function __construct()
     {
-        parent::__construct("local", ["id_local"], ["nome"]);
+        parent::__construct("local",
+
+            /** Required fields */
+
+            [
+                "id_local"
+            ],
+
+            [
+                "nome",
+                "bairro",
+                "cep",
+                "logradouro",
+                "complemento",
+                "numero",
+                "bairro",
+                "uf",
+                "cidade"
+            ]
+
+        );
     }
     /**
      * @return bool
@@ -16,7 +36,7 @@ class Local extends Model
     public function save(): bool
     {
         if (!$this->required()) {
-            $this->message->warning("Nome");
+            $this->message->warning("Desculpe! Todos os campos são obrigatórios");
             return false;
         }
 
@@ -33,6 +53,16 @@ class Local extends Model
 
         /** Local Create */
         if (empty($this->id_local) || $this->id_local == null) {
+
+            if (strlen($this->uf) > 2){
+                $this->message->error("O Campo UF deve ser no formato: (MG), (SP), (RJ) e o cep não deve conter pontos: . ou traço - ");
+                return false;
+            }
+
+            if (strlen($this->uf) > 2){
+                $this->message->error("O Campo UF deve ser no formato: (MG), (SP), (RJ)");
+                return false;
+            }
 
             $idLocal = $this->create($this->safe());
 

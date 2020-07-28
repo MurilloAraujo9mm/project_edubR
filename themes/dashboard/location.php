@@ -50,7 +50,6 @@
                         <span class="field icon-key">Cidade:</span>
                         <input class="radius" placeholder="UF" type="text" name="cidade"">
                     </label>
-
                 </div>
                 <div class="app_form_footer">
                     <button class="btn btn-green icon-check">Criar localização</button>
@@ -105,7 +104,6 @@
                     <span class="field icon-key">Cidade:</span>
                     <input class="radius" placeholder="UF" type="text" name="cidade" value="<?= $local->cidade ?>">
                 </label>
-
             </div>
             <div class="app_form_footer">
                 <button class="btn btn-blue icon-check-square-o">Atualizar</button>
