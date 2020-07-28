@@ -33,6 +33,6 @@
     "coffeecode/paginator": "^1.0",
     "coffeecode/router": "^1.0",
     "eftec/bladeone": "3.46.1",
-    "jarouche/viacep": "0.1-dev"
+    "jarouche/viacep": "1.2"
   }
 }

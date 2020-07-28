@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ae8e25d37686741edbec638d57e1803",
+    "content-hash": "ce368d01b6b9bc91260abf81f8f5138c",
     "packages": [
         {
             "name": "coffeecode/cropper",
@@ -304,6 +304,54 @@
                 "view"
             ],
             "time": "2020-06-16T23:20:37+00:00"
+        },
+        {
+            "name": "jarouche/viacep",
+            "version": "v1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rjarouche/buscaviacep.git",
+                "reference": "c1396de696c16c85db0e124a9e7cf9146901f087"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rjarouche/buscaviacep/zipball/c1396de696c16c85db0e124a9e7cf9146901f087",
+                "reference": "c1396de696c16c85db0e124a9e7cf9146901f087",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jarouche\\ViaCEP\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rodrigo Sartori Jarouche",
+                    "email": "rjarouche@gmail.com",
+                    "homepage": "http://rodrigojarouche.blogspot.com.br"
+                }
+            ],
+            "description": "Classe para pesquisar o CEP atraves do servico gratuito viacep",
+            "homepage": "http://rodrigojarouche.blogspot.com.br",
+            "keywords": [
+                "Pesquisa",
+                "cep",
+                "viacep"
+            ],
+            "time": "2020-04-29T18:26:41+00:00"
         },
         {
             "name": "league/plates",

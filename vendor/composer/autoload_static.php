@@ -40,6 +40,10 @@ class ComposerStaticInitcd2f631997990e60e0053564e204de14
         array (
             'League\\Plates\\' => 14,
         ),
+        'J' => 
+        array (
+            'Jarouche\\ViaCEP\\' => 16,
+        ),
         'I' => 
         array (
             'ImageMimeTypeGuesser\\' => 21,
@@ -74,6 +78,10 @@ class ComposerStaticInitcd2f631997990e60e0053564e204de14
         'League\\Plates\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/plates/src',
+        ),
+        'Jarouche\\ViaCEP\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jarouche/viacep/src',
         ),
         'ImageMimeTypeGuesser\\' => 
         array (
