@@ -25,8 +25,8 @@ define("CONF_DB_NAME", "projeto_local");
 /**
  * PROJECT URLs
  */
-define("CONF_URL_BASE", "http://localhost/projetoEducBr");
-define("CONF_URL_TEST", "http://localhost/projetoEducBr");
+define("CONF_URL_BASE", "http://localhost/projeto-EduBr");
+define("CONF_URL_TEST", "http://localhost/projeto-EduBr");
 
 
 /**
