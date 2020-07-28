@@ -1,12 +1,12 @@
 {
-  "name": "fatec/ldv",
-  "description": "Projeto FATEC LDV",
+  "name": "Edu/Br",
+  "description": "Projeto EduBr",
   "minimum-stability": "stable",
   "authors": [
     {
-      "name": "Marcos Vinicius",
-      "email": "marcos_gloria@outlook.com",
-      "homepage": "http://www.fatecsp.br/",
+      "name": "Murillo Araújo",
+      "email": "murilloaraujog@gmail.com",
+      "homepage": "https://murillo-portfolio.herokuapp.com/",
       "role": "Developer"
     }
   ],
