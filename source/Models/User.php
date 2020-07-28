@@ -120,3 +120,22 @@ class User extends Model
     
     }
 }
+
+
+if (!empty($data["delete"])) {
+    $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+    $userDelete = (new Local())->find("id_local = :id", "id={$data["id_local"]}")->fetch();
+
+    if (!$userDelete) {
+        $this->message->error("Você tentnou deletar um usuário que não existe")->flash();
+        echo json_encode(["redirect" => url("/app")]);
+        return;
+    }
+
+    $userDelete->delete("id_local = :id", "id={$data["id_local"]}");
+
+    $this->message->success("O usuário foi excluído com sucesso...")->flash();
+    echo json_encode(["redirect" => url("/app")]);
+
+    return;
+}

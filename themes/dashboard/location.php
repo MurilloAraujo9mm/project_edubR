@@ -116,8 +116,12 @@
             <!--ACTION SPOOFING-->
             <input type="hidden" name="delete" value="true"/>
 
-                <a href="<?= url("/app/location/{$local->id_local}"); ?>">excluir</a>
+            <div class="app_form_footer">
+                <button class="btn btn-red icon-check-square-o">excluir</button>
+            </div>
         </form>
     <?php endif; ?>
+</div>
+
 </div>
 

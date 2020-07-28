@@ -43,7 +43,7 @@ class App extends Controller
 
         if (!$this->user = Auth::user()) {
             $this->message->error("Efetue login para acessar o painel admin.")->flash();
-            redirect("/entrar");
+            redirect("/");
         }
     }
 
@@ -136,24 +136,21 @@ class App extends Controller
 
         //delete
         if (!empty($data["delete"])) {
-            var_dump($data["delete"]);
+            $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+            $userDelete = (new Local())->find("id_local = :id", "id={$data["id_local"]}")->fetch();
 
-
-            $delete = (new Local())->find("id_local = :id_local", "id_local={$data["id_local"]}")
-                ->fetch();
-            if (!$delete) {
-
-                $this->message->success("kkkkk")->render();
+            if (!$userDelete) {
+                $this->message->error("Você tentnou deletar um usuário que não existe")->flash();
                 echo json_encode(["redirect" => url("/app")]);
                 return;
             }
 
-            $delete->destroy();
+            $userDelete->delete("id_local = :id", "id={$data["id_local"]}");
 
-            $this->message->success("Sucesso ao deletar")->flash();
+            $this->message->success("O usuário foi excluído com sucesso...")->flash();
             echo json_encode(["redirect" => url("/app")]);
-            return;
 
+            return;
         }
 
         $userEdit = null;
