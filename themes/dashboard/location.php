@@ -7,13 +7,13 @@
         <header class="dash_content_app_header">
             <h2 class="icon-user">Buscar cep</h2>
 
-            <?php if (($cep)): ?>
+           
                 <form action="<?= url("/app/location"); ?>" class="app_search_form jquery_search">
                     <input type="text" name="search" placeholder="Buscar cep">
                     <input type="hidden" name="cepSearch" value="true">
-                    <button class="icon-search icon-notext">Buscar</button>
+                    <button class="btn btn-green transition radius icon-search icon-notext"></button>
                 </form>
-            <?php endif; ?>
+           
 
         </header>
 

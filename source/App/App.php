@@ -56,12 +56,6 @@ class App extends Controller
     public function home(?array $data): void
     {
 
-        if (!empty($data["action"]) && $data["action"] === "update") {
-            var_dump([[[[[]]]]]);
-            return;
-        }
-
-
         $head = $this->seo->render(
             "Olá {$this->user->name}. Locais - " . CONF_SITE_NAME,
             CONF_SITE_DESC,

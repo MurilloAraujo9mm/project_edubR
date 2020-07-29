@@ -41,8 +41,7 @@
                 <p class="no_users">Desculpe! Ainda não existem locais disponíveis</p>
             <?php endif; ?>
         </table>
-        <a class="btn required-color required-color-text icon-database radius"
-           href="<?= url("/app/location"); ?>">Criar novo local</a>
+        <a class="btn required-color required-color-text icon-database radius"href="<?= url("/app/location"); ?>">Criar novo local</a>
     </section>
 </div>
 </body>
