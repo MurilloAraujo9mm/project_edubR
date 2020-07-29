@@ -1,0 +1,103 @@
+###########################################
+#######    CONFIGURAÇÕES INICIAS ##########
+###########################################
+
+O arquivo de configação do projeto, está dentro de source/Boot/Config.php
+
+Para que o projeto seja configurado e funcione corretamente, deve-ser parametrizar a constantes
+
+define("CONF_URL_BASE", "http://localhost/projeto-EduBr");  // caso eu esteja em ambiente de produção, o sistema pegará o valor dessa constante
+define("CONF_URL_TEST", "http://localhost/projeto-EduBr"); // caso eu esteja em ambiente localhost, o sistema pegará o valor dessa constante
+
+
+Observação: os valores das constantes são relativos a url do projeto, caso o nome da pasta não seja o mesmo do exemplo acima, basta alterar o nome
+
+
+#####################################################
+#######    CONFIGURAÇÕES DO BANCO DE DADOS ##########
+######################################################
+
+define("CONF_DB_HOST", "localhost");
+define("CONF_DB_USER", "root");
+define("CONF_DB_PASS", "Thelast2244@");
+define("CONF_DB_NAME", "projeto_local");
+
+- Deverão ser adequadas de acordo com os parâmetros que foram definidos, caso o banco tenha outro nome, alterar a constanste CONF_DB_HOST
+
+- E assim, sucessivamente para todas as constantes do banco
+
+
+#####################################################
+#######    CONSTANTES DO TEMA DO SISTEMA   ##########
+#####################################################
+
+A parte visual: HTML e Css3 estão em pastas separadas, dentro da pasta themes.
+
+- Por exemplo, dentro da pasta web, eu tenho a parte de login do sistema. Acredito que, desta forma, a manutenção é muito mais fácil
+- Dentro da pasta dashboard, eu tenho todos os arquivos HTML, Css3 e Javascript, que interagem com a dashboard. Ou seja, a aplicação
+foi separada por themas(partes). Caso eu quisesse criar mais um módulo, ou uma area espécifica, bastaria criar mais uma pasta dentro da pasta
+themes, e começar a trabalhar nesta parte específica.
+
+#####################################################
+#######               PLATES PHP           ##########
+#####################################################
+
+O Componente plates PHP está sendo usando como template engine da aplicação.
+
+#####################################################
+#######               Coffee code          ##########
+####################################################
+
+
+Alguns componetes do coffecode também
+
+- O router: que controla as rotas do sistema
+- O componente Upload, que faz a gestão de uploads de arquivos
+- O componente SEO que garante o SEO do sistema
+
+
+
+#####################################################
+#######             ARQUITETURA MVC        ##########
+####################################################
+
+
+
+Todo o sistema trabalha em uma arquiterua MVC
+
+Tudo começa pelo index.php
+
+
+$route->get('/blog', "Web:blog");
+
+- Na linha acima, eu estou criando a rota /blog, que seria acessada por: https://www.meusite.com.br/blog
+
+- Para que a Rota funcione, é necessário Criar o controlador Web, que seria uma classe. Esta classe precisa implementar o método blog
+
+Exemplo:
+
+
+<?php
+
+
+    Web extendes Controller
+    {
+
+        public function blog():void
+        {
+            echo $this->view->render("blog", [
+                  "search" => "{$search}"
+            ]);
+        }
+
+    }
+}
+
+
+A rota iria acessar o controlador, que iria interagir com o modelo por meio do método blog
+- Após isso, o plates PHP entra em ação, mandando os resultados para a visão blog.php,
+que foi passado antes do array $this->view->render("blog", array());
+
+- Basicamente é essa a estrura do framework
+
+
