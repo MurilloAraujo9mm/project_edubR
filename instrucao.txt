@@ -95,7 +95,7 @@ Exemplo:
 
 
 A rota iria acessar o controlador, que iria interagir com o modelo por meio do método blog
-- Após isso, o plates PHP entra em ação, mandando os resultados para a visão blog.php,
+- Após isso, o plates PHP entra emm ação, mandando os resultados para a visão blog.php,
 que foi passado antes do array $this->view->render("blog", array());
 
 - Basicamente é essa a estrura do framework
