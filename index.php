@@ -50,13 +50,6 @@ $route->post("/location", "App:location");
 $route->get("/location/{id_local}", "App:location");
 $route->post("/location/{id_local}", "App:location");
 
-$route->post("/search", "App:search");
-$route->get("/search", "App:search");
-
-
-
-
-
 //END ADMIN
 $route->namespace("Source\App");
 /**

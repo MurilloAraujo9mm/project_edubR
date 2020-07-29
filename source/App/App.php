@@ -86,26 +86,24 @@ class App extends Controller
         $search = null;
         $cep = new Cep(["JSON", "XML"]);
 
-        if (!empty($data["searchCep"])) {
+
+        if (!empty($data["cepSearch"])) {
 
             if (empty($data["search"])) {
                 $json["message"] = $this->message->info("Opss! Por favor! Preencha o campo CEP")->render();
                 echo json_encode($json);
                 return;
             }
+            $search = filter_var($data["search"], FILTER_SANITIZE_STRIPPED);
+            $search = $cep->cepFind("{$search}")["result"];
+
 
             if ($search) {
                 $this->message->success("Cep localizado com sucesso")->render();
                 echo json_encode($search);
                 return;
             }
-
-            $search = filter_var($data["search"], FILTER_SANITIZE_STRIPPED);
-            $search = $cep->cepFind("{$search}")["result"];
-
             echo json_encode($search);
-
-
         }
 
         //create
@@ -177,8 +175,8 @@ class App extends Controller
 
             $this->message->success("O usuário foi excluído com sucesso...")->flash();
             echo json_encode(["redirect" => url("/app")]);
-
             return;
+
         }
 
         $userEdit = null;
@@ -194,38 +192,14 @@ class App extends Controller
             url("/admin/assets/images/image.jpg"),
             false
         );
-        $search = $cep->cepFind("{$search}")["result"];
 
         echo $this->view->render("location", [
             "head" => $head,
             "local" => $userEdit,
-            "cep" => "{$search}"
+            "cep" => $search
         ]);
 
     }
-
-    public function search(?array $data): void
-    {
-        //search redirect
-
-
-
-
-
-        $head = $this->seo->render(
-            CONF_SITE_NAME,
-            CONF_SITE_DESC
-        );
-
-
-        echo $this->view->render("location", [
-            "head" => $head,
-            "cep" => "k"
-        ]);
-
-
-    }
-
 
     /**
      * @param array|null $data
