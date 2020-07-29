@@ -13,6 +13,8 @@ use Source\Models\CafeApp\AppOrder;
 use Source\Models\CafeApp\AppPlan;
 use Source\Models\CafeApp\AppSubscription;
 use Source\Models\CafeApp\AppWallet;
+use Source\Models\Cep;
+use Jarouche\ViaCEP\HelperViaCep;
 use Source\Models\Courses;
 use Source\Models\ListUsers;
 use Source\Models\Local;
@@ -79,6 +81,32 @@ class App extends Controller
 
     public function location(?array $data): void
     {
+
+        //search
+        $search = null;
+        $cep = new Cep(["JSON", "XML"]);
+
+        if (!empty($data["searchCep"])) {
+
+            if (empty($data["search"])) {
+                $json["message"] = $this->message->info("Opss! Por favor! Preencha o campo CEP")->render();
+                echo json_encode($json);
+                return;
+            }
+
+            if ($search) {
+                $this->message->success("Cep localizado com sucesso")->render();
+                echo json_encode($search);
+                return;
+            }
+
+            $search = filter_var($data["search"], FILTER_SANITIZE_STRIPPED);
+            $search = $cep->cepFind("{$search}")["result"];
+
+            echo json_encode($search);
+
+
+        }
 
         //create
         if (!empty($data["create"])) {
@@ -166,11 +194,35 @@ class App extends Controller
             url("/admin/assets/images/image.jpg"),
             false
         );
+        $search = $cep->cepFind("{$search}")["result"];
 
         echo $this->view->render("location", [
             "head" => $head,
-            "local" => $userEdit
+            "local" => $userEdit,
+            "cep" => "{$search}"
         ]);
+
+    }
+
+    public function search(?array $data): void
+    {
+        //search redirect
+
+
+
+
+
+        $head = $this->seo->render(
+            CONF_SITE_NAME,
+            CONF_SITE_DESC
+        );
+
+
+        echo $this->view->render("location", [
+            "head" => $head,
+            "cep" => "k"
+        ]);
+
 
     }
 

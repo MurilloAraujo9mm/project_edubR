@@ -1,10 +1,21 @@
 <?php $v->layout("_theme"); ?>
 <div class="app_formbox">
+
+    <header class="dash_content_app_header">
+        <h2 class="icon-user">Buscar cep</h2>
+        <?php if(($cep)): echo "kkkkkkkkk"; ?>
+            <form action="<?= url("/app/location"); ?>" class="app_search_form jquery_search" enctype="multipart/form-data">
+                <input type="hidden" name="searchCep" value="true"/>
+                <input type="text" name="search" placeholder="Buscar cep">
+                <button class="icon-search icon-notext">Buscar</button>
+            </form>
+        <?php endif; ?>
+    </header>
+
     <?php if (!$local): ?>
         <header class="dash_content_app_header">
             <h2 class="icon-plus-circle">Novo local</h2>
         </header>
-
         <div class="app_formbox">
             <form class="app_form" action="<?= url("/app/location"); ?>" method="post">
                 <!--ACTION SPOOFING-->
@@ -13,7 +24,7 @@
 
                     <label>
                         <span class="field icon-user">Nome:</span>
-                        <input class="radius" type="text" placeholder="Name" name="nome">
+                        <input class="radius" type="text" placeholder="Name" name="nome" value="<?= ""  ?>">
                     </label>
 
                     <label>

@@ -18,7 +18,7 @@ class Cep extends HelperViaCep
         $this->data = $types;
     }
 
-    public function cepFind(string $number): ?array
+    public function cepFind(string $number)
     {
         foreach ($this->data as $cep) {
            $find = HelperViaCep::getBuscaViaCEP($cep, $number);
