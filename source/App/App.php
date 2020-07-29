@@ -47,6 +47,7 @@ class App extends Controller
             $this->message->error("Efetue login para acessar o painel admin.")->flash();
             redirect("/");
         }
+
     }
 
     /**
