@@ -28,7 +28,7 @@ define("CONF_DB_NAME", "projeto_local");
 
 
 #####################################################
-#######    CONSTANTES DO TEMA DO SISTEMA   ##########
+#######    CONSTANTES DO TEMA DO SISTEMA Local  ##########
 #####################################################
 
 A parte visual: HTML e Css3 estão em pastas separadas, dentro da pasta themes.
