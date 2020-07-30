@@ -19,11 +19,9 @@ if (!empty($post)){
     <input type="text" name="c" placeholder="buscar CEP">
 
     <?php if (!empty($response)): ?>
-
         <input type="text" name="cep" value="<?= (!empty($response) ? $response["cep"] : ""); ?>">
         <input type="text" name="logradouro" value="<?= (!empty($response) ? $response["logradouro"] : ""); ?>">
         <input type="text" name="bairro" value="<?= (!empty($response) ? $response["bairro"] : ""); ?>">
-
     <?php endif; ?>
 
     <button>Buscar</button>

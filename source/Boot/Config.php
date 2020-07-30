@@ -26,16 +26,16 @@ define("CONF_URL_TEST", "http://localhost/projeto-EduBr");
  * SITE
  */
 define("CONF_SITE_NAME", "Projeto LDV Fatec");
-define("CONF_SITE_TITLE", "Gerencie suas máquinas");
+define("CONF_SITE_TITLE", "Gerencie seus locais");
 define("CONF_SITE_DESC","hello");
 define("CONF_SITE_LANG", "pt_BR");
-define("CONF_SITE_DOMAIN", "http://www.fatecsp.br/");
-define("CONF_SITE_ADDR_STREET", "SC 406 - Rod. Drº Antônio Luiz Moura Gonzaga");
-define("CONF_SITE_ADDR_NUMBER", "3339");
-define("CONF_SITE_ADDR_COMPLEMENT", "Bloco A, Sala 208");
+define("CONF_SITE_DOMAIN", "https://www.educbr.com/");
+define("CONF_SITE_ADDR_STREET", "-");
+define("CONF_SITE_ADDR_NUMBER", "-");
+define("CONF_SITE_ADDR_COMPLEMENT", "-");
 define("CONF_SITE_ADDR_CITY", "São Paulo");
 define("CONF_SITE_ADDR_STATE", "SP");
-define("CONF_SITE_ADDR_ZIPCODE", "88048-301");
+define("CONF_SITE_ADDR_ZIPCODE", "-");
 
 /**
  * SOCIAL
