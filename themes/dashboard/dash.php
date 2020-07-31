@@ -12,7 +12,7 @@
                 <th class="icon-heart">Editar</th>
             </tr>
             <?php if (!empty($local)): ?>
-                <?php foreach ($local as $locais): var_dump($locais);?>
+                <?php foreach ($local as $locais): ?>
 
                     <?php if ($locais->uf == "MG"): ?>
                         <tr class="color-setup-mg">

@@ -23,8 +23,6 @@ class Web extends Controller
             DIRECTORY_SEPARATOR . '..' .
             DIRECTORY_SEPARATOR . "themes" .
             DIRECTORY_SEPARATOR . CONF_VIEW_THEME . DIRECTORY_SEPARATOR);
-        
-        (new Online())->report();
     }
     
  
@@ -274,7 +272,7 @@ class Web extends Controller
             case "manutencao":
                 $error->code = "OPS";
                 $error->title = "Desculpe. Estamos em manutenção!";
-                $error->message = "Voltamos logo! Por hora estamos trabalhando para melhorar nosso conteúdo para você controlar melhor as suas contas :P";
+                $error->message = "Voltamos logo! Por hora estamos trabalhando para melhorar nosso conteúdo :P";
                 $error->linkTitle = null;
                 $error->link = null;
                 break;
