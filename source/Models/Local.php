@@ -25,7 +25,8 @@ class Local extends Model
                 "numero",
                 "bairro",
                 "uf",
-                "cidade"
+                "cidade",
+                "data"
             ]
 
         );

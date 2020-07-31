@@ -7,25 +7,13 @@ use Source\Core\Controller;
 use Source\Core\Session;
 use Source\Core\View;
 use Source\Models\Auth;
-use Source\Models\CafeApp\AppCategory;
-use Source\Models\CafeApp\AppInvoice;
-use Source\Models\CafeApp\AppOrder;
-use Source\Models\CafeApp\AppPlan;
-use Source\Models\CafeApp\AppSubscription;
-use Source\Models\CafeApp\AppWallet;
 use Source\Models\Cep;
 use Jarouche\ViaCEP\HelperViaCep;
-use Source\Models\Courses;
 use Source\Models\ListUsers;
 use Source\Models\Local;
 use Source\Models\Post;
-use Source\Models\Report\Access;
-use Source\Models\Report\Online;
-use Source\Models\Server;
 use Source\Models\User;
-use Source\Support\Email;
-use Source\Support\Thumb;
-use Source\Support\Upload;
+
 
 /**
  * Class App

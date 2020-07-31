@@ -12,12 +12,12 @@
                 <th class="icon-heart">Editar</th>
             </tr>
             <?php if (!empty($local)): ?>
-                <?php foreach ($local as $locais): ?>
+                <?php foreach ($local as $locais): var_dump($locais);?>
 
                     <?php if ($locais->uf == "MG"): ?>
                         <tr class="color-setup-mg">
                             <td class="color-setup-mg"><?= $locais->nome; ?></td>
-                            <td class="color-setup-mg"><?= date_fmt($locais->data, "d/m/Y"); ?></td>
+                            <td class="color-setup-mg"><?= date("d/m/Y", strtotime($locais->data)); ?></td>
                             <td class="color-setup-mg"><?= $locais->uf; ?></td>
                             <form action="<?= url("/app/location/{$locais->id_local}") ?>" method="post">
                                 <input type="hidden" name="action" value="update"/>
